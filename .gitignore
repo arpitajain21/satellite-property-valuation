@@ -205,3 +205,22 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Machine Learning Project
+
+# Datasets
+data/raw/
+data/processed/
+
+# Satellite images (large files)
+data/images/
+
+# Model outputs
+outputs/
+
+# Trained models / weights
+*.pt
+*.pth
+*.h5
+*.ckpt
+
