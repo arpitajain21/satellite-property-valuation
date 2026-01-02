@@ -16,9 +16,9 @@ TEST_CSV = "data/raw/test.csv"
 TRAIN_IMG_DIR = "data/images/train"
 TEST_IMG_DIR = "data/images/test"
 
-# ==============================
+
 # API Key
-# ==============================
+
 
 MAPBOX_API_KEY = os.getenv("MAPBOX_API_KEY")
 
@@ -28,9 +28,9 @@ if MAPBOX_API_KEY is None:
         "Set it using: $env:MAPBOX_API_KEY='your_token_here'"
     )
 
-# ==============================
+
 # Helper functions
-# ==============================
+
 
 def build_mapbox_url(lat, lon):
     """
@@ -67,7 +67,6 @@ def fetch_images(csv_path, image_dir):
         lat = row["lat"]
         lon = row["long"]
 
-        # ✅ composite filename: id + row index
         image_name = f"{house_id}_{idx}.png"
         image_path = os.path.join(image_dir, image_name)
 
@@ -83,9 +82,6 @@ def fetch_images(csv_path, image_dir):
 
     print(f"Completed: {image_dir}")
 
-# ==============================
-# Run for train & test
-# ==============================
 
 if __name__ == "__main__":
     fetch_images(TRAIN_CSV, TRAIN_IMG_DIR)
